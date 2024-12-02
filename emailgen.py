@@ -33,6 +33,10 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 			.colored {
 				color: blue;
 			}
+			#authors {
+				text-align: center;
+				font-style: italic;	
+			}
 			#body {
 				font-size: 14px;
 			}
@@ -127,8 +131,15 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 
 		</style>
-		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>		
-		<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script>
+			window.MathJax = {
+			tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+			};"
+		</script>				
+	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
 	</head>
 	<body>
 		<div id="banner">
@@ -210,13 +221,13 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 			entry_html = '\n\t\t<div id="paper"> '
 
 			# Add the link to the title
-			entry_html = entry_html + '<a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a>'
+			entry_html = entry_html + '<h3><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a></h3>'
 			
 			# Add tags and version info
 			entry_html = entry_html + tags_html + version_html
 
 			# Add authors
-			entry_html = entry_html + '<br>\n\t<b> Authors: </b>' + author_str
+			entry_html = entry_html + '<br>\n\t<div id="authors">Authors:</div>' + author_str
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
