@@ -173,7 +173,7 @@ onload='renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$"
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html = rss_html + """\t<div id="subjectTitle">\n\t<h2 id="subjectTitleText">""" + str(subj) + """</h2>\n\t</div>\n\t<div id="subject">\n"""
+		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj) + """</h2>\n\t</div>\n\t<div id="subject">\n"""
 		text_html = str(subj) + '\n'
 
 		for entry in pointer:
@@ -231,7 +231,7 @@ onload='renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$"
 			entry_html = entry_html + '</h3>'
 
 			# Add authors
-			entry_html = entry_html + '<br>\n\t<div id="authors">' + author_str + '</div>'
+			entry_html = entry_html + '<br>\t<div id="authors">' + author_str + '</div>'
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
