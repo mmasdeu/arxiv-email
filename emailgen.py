@@ -21,6 +21,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 	# Generate HTML for the email
 	html_top = """\
+	<!DOCTYPE html>
 	<html>
 	<head>
 		<style>
