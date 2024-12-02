@@ -135,10 +135,18 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 		<script>
 			window.MathJax = {
 			tex: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']]
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
 			}
 			};"
-		</script>				
+		</script>			
+		<script>
+			MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				processEscapes: true
+			}
+			});		
+		</script>					
 	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
 	</head>
 	<body>
@@ -221,10 +229,12 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 			entry_html = '\n\t\t<div id="paper"> '
 
 			# Add the link to the title
-			entry_html = entry_html + '<h3><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a></h3>'
+			entry_html = entry_html + '<h3><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
 			
 			# Add tags and version info
 			entry_html = entry_html + tags_html + version_html
+
+			entry_html = entry_html + '</h3>'
 
 			# Add authors
 			entry_html = entry_html + '<br>\n\t<div id="authors">' + author_str + '</div>'
