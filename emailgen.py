@@ -227,7 +227,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 			entry_html = entry_html + tags_html + version_html
 
 			# Add authors
-			entry_html = entry_html + '<br>\n\t<div id="authors">Authors:</div>' + author_str
+			entry_html = entry_html + '<br>\n\t<div id="authors">' + author_str + '</div>'
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
