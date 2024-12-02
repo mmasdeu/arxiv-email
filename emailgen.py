@@ -127,6 +127,8 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 
 		</style>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>		
+		<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
 	</head>
 	<body>
 		<div id="banner">
@@ -205,7 +207,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 
 			# Make the html for the entry
-			entry_html = '\n\t\t<div id="paper"><b>Title:</b> '
+			entry_html = '\n\t\t<div id="paper"> '
 
 			# Add the link to the title
 			entry_html = entry_html + '<a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a>'
@@ -218,7 +220,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
-			entry_html = entry_html	+ '<br>\n\t\t<b>Abstract: </b>' + abstract + '</div>\n<hr>'
+			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '</div>\n<hr>'
 
 
 			# Add alternative text version of email
