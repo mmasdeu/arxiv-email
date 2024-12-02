@@ -253,9 +253,6 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 	# testingpage = open('test.html','w')
 	# testingpage.write(html)
 
-
-
-
 	# Record the MIME types of both parts,text/plain and text/html.
 	part1 = MIMEText(text, 'plain')
 	part2 = MIMEText(html, 'html')
@@ -276,6 +273,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 	mail.login(sender_email, sender_password)
 	mail.sendmail(sender_email, recipient_email, msg.as_string())
 	mail.quit()
+	return html
 
 ######################################################
 
