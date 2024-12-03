@@ -16,8 +16,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 		reader = csv.reader(f)
 		mathSubjects = list(reader)
 
-	all_possible_tags = [x[0] for x in mathSubjects]
-	all_possible_subjects = [x[1] for x in mathSubjects]
+	tag_dict = {x : y for x, y in mathSubjects}
 
 	# Generate HTML for the email
 	html_top = """\
@@ -132,15 +131,21 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 
 
 		</style>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css">
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"></script>
+		<script type="text/javascript" id="MathJax-script" async
+  		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+		</script>
 <script>
     renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}]});
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
-onload='renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}]});'></script>
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+ window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};"
+</script>
 	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
 	</head>
 	<body>
@@ -165,16 +170,16 @@ onload='renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$"
 	for subj in subscription_preferences:
 
 		# Goes from math.AG -> Algebraic Geometry
-		subj_index = all_possible_tags.index(subj)
-		subj_title = all_possible_subjects[subj_index]
+		subj_title = tag_dict[subj]
+		# subj_index = all_possible_tags.index(subj)
+		# subj_title = all_possible_subjects[subj_index]
 
 
 		rss_url = "http://rss.arxiv.org/rss/" + str(subj)
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj) + """</h2>\n\t</div>\n\t<div id="subject">\n"""
-		text_html = str(subj) + '\n'
+		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj_title) + " (" str(subj) + ")" + """</h2>\n\t</div>\n\t<div id="subject">\n"""
 
 		for entry in pointer:
 
