@@ -16,7 +16,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 		reader = csv.reader(f)
 		mathSubjects = list(reader)
 
-	tag_dict = {x : y for x, y in mathSubjects}
+	tag_dict = {xy[0] : xy[1] for xy in mathSubjects}
 
 	# Generate HTML for the email
 	html_top = """\
