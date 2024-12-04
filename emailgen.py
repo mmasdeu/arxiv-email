@@ -146,14 +146,9 @@ MathJax = {
 	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">		
 	</head>
 	<body>
-		<div id="banner">
-			<h1>Daily Math Feed: """ + str(today.strftime("%B %d, %Y")) + """</h1>
-		</div>
-
-		<br>
 		<div id="body">
 	"""
-	text_top = "Daily Math Feed\n\n"
+	text_top = "ArXiv Daily\n\n"
 
 	html_bottom = """\
 		</div>
@@ -176,7 +171,7 @@ MathJax = {
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj_title) + " (" + str(subj) + ")" + """</h2>\n\t</div>\n\t<div id="subject">\n"""
+		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj_title) + " [" + str(subj) + "]" + """</h2>\n\t</div>\n\t<div id="subject">\n"""
 
 		for entry in pointer:
 
@@ -257,7 +252,7 @@ MathJax = {
 
 
 	msg = MIMEMultipart('alternative')
-	msg['Subject'] = "Daily Math Feed: " + str(today.strftime("%B %d, %Y"))
+	msg['Subject'] = "ArXiv Daily - " + str(today.strftime("%B %d, %Y"))
 	msg['From'] = sender_email
 	msg['To'] = recipient_email
 
