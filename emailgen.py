@@ -7,8 +7,10 @@
 import csv
 import feedparser
 from datetime import date
+import LaTexAccents as TeX
 today = date.today()
 
+converter = TeX.AccentConverter()
 
 def send_email(recipient_email,subscription_preferences,sender_email,sender_password):
 	# Get a list of math subjects and math tags from 'subj-list.csv'
@@ -217,7 +219,7 @@ MathJax = {
 				for i in range(1,len(author_list)):
 					author_str = author_str + ', ' + author_list[i].lstrip()
 
-
+			author_str = converter.decode_Tex_Accents(author_str, utf8_or_ascii=1)
 
 			# Make the html for the entry
 			entry_html = '\n\t\t<div id="paper"> '
