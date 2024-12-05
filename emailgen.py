@@ -8,7 +8,7 @@ import csv
 import feedparser
 from datetime import date
 import LaTexAccents as TeX
-from subprocess import check_output
+import subprocess
 today = date.today()
 
 converter = TeX.AccentConverter()
