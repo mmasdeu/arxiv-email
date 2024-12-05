@@ -9,6 +9,7 @@ import feedparser
 from datetime import date
 import LaTexAccents as TeX
 import subprocess
+import base64
 today = date.today()
 
 converter = TeX.AccentConverter()
@@ -17,6 +18,7 @@ def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questio
     '''Convert a LaTeX string to unicode.
     '''
     # Use pandoc for the job
+    latex_string = base64.encodebytes(latex_string.encode())
     try:
         # This works in Python 3.4+
         return subprocess.check_output(
