@@ -161,7 +161,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 		<script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['$', '$']]
   }
 };
 </script>
@@ -188,10 +188,6 @@ MathJax = {
 
 		# Goes from math.AG -> Algebraic Geometry
 		subj_title = tag_dict[subj]
-		# subj_index = all_possible_tags.index(subj)
-		# subj_title = all_possible_subjects[subj_index]
-
-
 		rss_url = "http://rss.arxiv.org/rss/" + str(subj)
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
