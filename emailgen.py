@@ -13,11 +13,26 @@ today = date.today()
 
 converter = TeX.AccentConverter()
 
-def latex_to_unicode(latex_string):
-	'''Convert a LaTeX string to unicode.
-	'''
+def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questions/274834/compile-latex-source-into-unicode-string
+    '''Convert a LaTeX string to unicode.
+    '''
     # Use pandoc for the job
-	return check_output(['pandoc', '-f', 'latex', '-t', 'html'], input=latex_string)
+    try:
+        # This works in Python 3.4+
+        return subprocess.check_output(
+            ['pandoc', '-f', 'latex', '-t', 'plain'],
+            input=latex_string
+            )
+    except TypeError:  # unexpected keyword 'input'
+        p = subprocess.Popen(
+            ['pandoc', '-f', 'latex', '-t', 'plain'],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+            )
+        stdout, stderr = p.communicate(latex_string)
+        return stdout.replace('\n', ' ').strip().decode('utf-8')
+	
 
 def send_email(recipient_email,subscription_preferences,sender_email,sender_password):
 	# Get a list of math subjects and math tags from 'subj-list.csv'
