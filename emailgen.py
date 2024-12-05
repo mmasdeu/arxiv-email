@@ -21,10 +21,10 @@ def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questio
     latex_string = base64.encodebytes(latex_string.encode())
     try:
         # This works in Python 3.4+
-        return subprocess.check_output(
+        return base64.b64decode(subprocess.check_output(
             ['pandoc', '-f', 'latex', '-t', 'plain'],
-            input=latex_string
-            )
+            input=latex_string)
+            ).decode('utf-8')
     except TypeError:  # unexpected keyword 'input'
         p = subprocess.Popen(
             ['pandoc', '-f', 'latex', '-t', 'plain'],
@@ -32,7 +32,8 @@ def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questio
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
             )
-        stdout, stderr = p.communicate(latex_string)
+        stdout, _ = p.communicate(latex_string)
+        stdout = base64.b64decode(stdout).decode('utf-8')
         return stdout.replace('\n', ' ').strip().decode('utf-8')
 	
 
