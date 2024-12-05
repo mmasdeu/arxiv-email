@@ -8,13 +8,13 @@ import csv
 import feedparser
 from datetime import date
 import LaTexAccents as TeX
-import subprocess
-import base64
+# import subprocess
+# import base64
 today = date.today()
 
 converter = TeX.AccentConverter()
 
-def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questions/274834/compile-latex-source-into-unicode-string
+""" def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questions/274834/compile-latex-source-into-unicode-string
     '''Convert a LaTeX string to unicode.
     '''
     # Use pandoc for the job
@@ -36,7 +36,7 @@ def latex_to_unicode(latex_string): # From https://tex.stackexchange.com/questio
         stdout = base64.b64decode(stdout).decode('utf-8')
         return stdout.replace('\n', ' ').strip().decode('utf-8')
 	
-
+ """
 def send_email(recipient_email,subscription_preferences,sender_email,sender_password):
 	# Get a list of math subjects and math tags from 'subj-list.csv'
 	with open('subj-list.csv','r') as f:
@@ -259,7 +259,7 @@ MathJax = {
 			abstract = str(entry.summary).split('Abstract: ')[1]
 
 			# Convert abstract via pandoc
-			abstract = latex_to_unicode(abstract)
+			# abstract = latex_to_unicode(abstract)
 
 			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '</div>\n<hr>'
 
