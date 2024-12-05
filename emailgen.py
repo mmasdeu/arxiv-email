@@ -8,9 +8,16 @@ import csv
 import feedparser
 from datetime import date
 import LaTexAccents as TeX
+from subprocess import check_output
 today = date.today()
 
 converter = TeX.AccentConverter()
+
+def latex_to_unicode(latex_string):
+	'''Convert a LaTeX string to unicode.
+	'''
+    # Use pandoc for the job
+	return check_output(['pandoc', '-f', 'latex', '-t', 'html'], input=latex_string)
 
 def send_email(recipient_email,subscription_preferences,sender_email,sender_password):
 	# Get a list of math subjects and math tags from 'subj-list.csv'
@@ -232,6 +239,10 @@ MathJax = {
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
+
+			# Convert abstract via pandoc
+			abstract = latex_to_unicode(abstract)
+
 			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '</div>\n<hr>'
 
 
