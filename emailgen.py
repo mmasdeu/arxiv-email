@@ -51,57 +51,16 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 	<html>
 	<head>
 		<style>
-			html{
-				background-color: #F2F3F4;
-			}
-			p{
-				color:#2B303A;
-			}
-			.colored {
-				color: blue;
-			}
 			#authors {
 				text-align: center;
 				font-style: italic;	
 			}
-			#body {
-				font-size: 14px;
-			}
-			#banner{
-				width:100%;
-				font-size:18px;
-				color: #F4F2F3;
-				text-align:center;
-				padding:1px;
-				border-radius: 20px;
-				background-color: #515c5d;
-			}
-
-			.banner_table{
-				border-radius: 20px;
-				text-align: center;
-				color: white;
-				background-size: cover;
-			}
-
-			#banner h1{
-				width: 75%;
-				display: inline-block;
-				margin: 10px;
-			}
-
-
-			#body a{
-				color: #0C7C59;
-			}
 			#subjectTitle{
 				width:inherit;
-				font-size:14px;
-				color : #984447;
 				text-align:center;
 			}
 			#subject{
-				text-align:left;
+				text-align:center;
 			}
 
 			#tag, #xlistedtag, #updated{
@@ -126,36 +85,6 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 				background-color: #575757;
 			}
 
-
-			.container {
-			  position: relative;
-			  text-align: center;
-			  color: yellow;
-			}
-
-			.container h1{
-			   z-index: 2;
-			   position: absolute;
-			   top: 50%;
-				left: 50%;
-				right: 50%;
-				font-size: 20px;
-				width: inherit;
-				padding: 0;
-				margin: 0;
-			}
-
-			.container img{
-				z-index: 1;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top:0;
-				right:0;
-				bottom:0;
-				left:0;
-			}
-
 			
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 
@@ -167,7 +96,7 @@ body{
   font-size: 16px;
   color:#777;
 }
-h1,h4{
+h1,h2,h4{
   font-family: 'Montserrat', sans-serif;
 }
 .row{
@@ -175,10 +104,11 @@ h1,h4{
 }
 .separator{
   margin-bottom: 30px;
-  width:35px;
+  width:100%;
   height:3px;
   background:#777;
   border:none;
+  
 }
 .title{
   text-align: center;
@@ -209,7 +139,7 @@ h1,h4{
   user-select: none;
   
   .item-in {
-    background: #fff;
+    background: #e8e8e8;
     padding: 40px;
     position: relative;
     
@@ -221,12 +151,12 @@ h1,h4{
     content: "";
     position: absolute;
     bottom: 0px;
-    height: 2px;
+    height: 3px;
     width: 0%;
-    background: #333333;
-    right: 0px;
-    -webkit-transition: width 0.4s;
-    transition: width 0.4s;
+    background: #008539;
+    left: 0px;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
     }
   }
 }
@@ -243,7 +173,7 @@ h1,h4{
     }
     a{
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+	  font-size: inherit;
       text-transform: uppercase;
       color: #666666;
       margin-top: 10px;
@@ -337,7 +267,7 @@ MathJax = {
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html = rss_html + """\t<div id="subjectTitle">\t<h2 id="subjectTitleText">""" + str(subj_title) + " [" + str(subj) + "]" + """</h2>\n\t</div>\n\t<div id="subject">\n"""
+		rss_html = rss_html + """\t<div id="subjectTitle">\t<h1 id="subjectTitleText">""" + str(subj_title) + " [" + str(subj) + "]" + """</h1>\n\t</div>\n\t<div id="subject">\n"""
 
 		for entry in pointer:
 
@@ -406,9 +336,9 @@ MathJax = {
 			# Convert abstract via pandoc
 			# abstract = latex_to_unicode(abstract)
 
-			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '</div>\n<hr>'
+			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '<br>\n'
 
-			entry_html = entry_html + '<a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>'
+			# entry_html = entry_html + '<a href="' + str(entry.link)+'"> Read More <i class="fa fa-long-arrow-right"></i></a>'
 
 			entry_html = entry_html + '</div></div>'
 
@@ -455,15 +385,13 @@ MathJax = {
 	msg.attach(part2)
 
 	# Send the message via local SMTP server.
-	mail = smtplib.SMTP('smtp.gmail.com', 587)
-
-	mail.ehlo()
-
-	mail.starttls()
-
-	mail.login(sender_email, sender_password)
-	mail.sendmail(sender_email, recipient_email, msg.as_string())
-	mail.quit()
+	if sender_email is not None:
+		mail = smtplib.SMTP('smtp.gmail.com', 587)
+		mail.ehlo()
+		mail.starttls()
+		mail.login(sender_email, sender_password)
+		mail.sendmail(sender_email, recipient_email, msg.as_string())
+		mail.quit()
 	return html
 
 ######################################################

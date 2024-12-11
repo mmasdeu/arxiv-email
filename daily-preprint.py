@@ -1,8 +1,12 @@
 from emailgen import *
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv(".env")
+except ModuleNotFoundError:
+    pass
 from pathlib import Path
-load_dotenv(".env")
+
 
 USER = os.environ.get("GMAIL_USER")
 PASSWORD = os.environ.get("GMAIL_PASSWORD")
