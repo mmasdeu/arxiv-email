@@ -383,7 +383,7 @@ MathJax = {
 			author_str = converter.decode_Tex_Accents(author_str, utf8_or_ascii=1)
 
 			# Make the html for the entry
-			entry_html = '\n\t\t<div id="paper"> '
+			entry_html = '\n\t\t<div class="col-md-6 item" id="paper">\n\t\t\t<div class="item-in">\n'
 
 			# Add the link to the title
 			entry_html = entry_html + '<h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
@@ -410,6 +410,7 @@ MathJax = {
 
 			entry_html = entry_html + '<a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>'
 
+			entry_html = entry_html + '</div></div>'
 
 			# Add alternative text version of email
 			entry_text = str(entry.title) + '\n\t' + author_str + '\n\n\t\t' + str(entry.summary)
