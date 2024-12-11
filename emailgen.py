@@ -156,6 +156,151 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 				left:0;
 			}
 
+			
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body{
+  background: #fbfbfb;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color:#777;
+}
+h1,h4{
+  font-family: 'Montserrat', sans-serif;
+}
+.row{
+  padding:50px 0;
+}
+.separator{
+  margin-bottom: 30px;
+  width:35px;
+  height:3px;
+  background:#777;
+  border:none;
+}
+.title{
+  text-align: center;
+  
+  .row{
+    padding: 50px 0 0;
+  }
+  
+  h1{
+    text-transform: uppercase;
+  }
+  
+  .separator{
+    margin: 0 auto 10px;
+  }
+}
+.item {
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  .item-in {
+    background: #fff;
+    padding: 40px;
+    position: relative;
+    
+    &:hover:before {
+      width: 100%;
+    }
+   
+    &::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background: #333333;
+    right: 0px;
+    -webkit-transition: width 0.4s;
+    transition: width 0.4s;
+    }
+  }
+}
+.item{
+    
+  h4{
+      font-size: 18px;
+      margin-top: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    p{
+      font-size: 12px;
+    }
+    a{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #666666;
+      margin-top: 10px;
+
+      i {
+        opacity: 0;
+        padding-left: 0px;
+        transition: 0.4s;
+        font-size: 24px;
+        display: inline-block;
+        top: 5px;
+        position: relative;
+       }
+      
+      &:hover {
+        text-decoration:none;
+        i {
+          padding-left: 10px;
+          opacity: 1;
+          font-weight: 300;
+          }
+        }
+      }
+    }
+.item .icon {
+  position:absolute;
+  top: 27px;
+  left: -16px;
+  cursor:pointer;
+    a{
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      font-weight:400;
+      color: #999;
+      text-transform:none;
+    }
+    svg{
+      width:32px;
+      height:32px;
+      float:left;
+    }
+    .icon-topic{
+      opacity: 0;
+      padding-left: 0px;
+      transition: 0.4s;
+      display: inline-block;
+      top: 0px;
+      position: relative;
+    }
+    &:hover .icon-topic{
+      opacity: 1;
+      padding-left: 10px;
+    }
+  }
+@media only screen and (max-width : 768px) {
+  .item .icon{position: relative; top: 0; left:0;}
+}
 
 		</style>
 		<script>
@@ -241,12 +386,16 @@ MathJax = {
 			entry_html = '\n\t\t<div id="paper"> '
 
 			# Add the link to the title
-			entry_html = entry_html + '<h3><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
+			entry_html = entry_html + '<h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
+			
+
 			
 			# Add tags and version info
 			entry_html = entry_html + tags_html + version_html
 
-			entry_html = entry_html + '</h3>'
+			entry_html = entry_html + '</h4>'
+
+			entry_html = entry_html + '<div class="separator"></div>\n'
 
 			# Add authors
 			entry_html = entry_html + '<br>\t<div id="authors">' + author_str + '</div>'
@@ -258,6 +407,8 @@ MathJax = {
 			# abstract = latex_to_unicode(abstract)
 
 			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '</div>\n<hr>'
+
+			entry_html = entry_html + '<a href="#">Read More <i class="fa fa-long-arrow-right"></i></a>'
 
 
 			# Add alternative text version of email
