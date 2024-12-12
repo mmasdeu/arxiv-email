@@ -2,57 +2,16 @@
 	<html>
 	<head>
 		<style>
-			html{
-				background-color: #F2F3F4;
-			}
-			p{
-				color:#2B303A;
-			}
-			.colored {
-				color: blue;
-			}
 			#authors {
 				text-align: center;
 				font-style: italic;	
 			}
-			#body {
-				font-size: 14px;
-			}
-			#banner{
-				width:100%;
-				font-size:18px;
-				color: #F4F2F3;
-				text-align:center;
-				padding:1px;
-				border-radius: 20px;
-				background-color: #515c5d;
-			}
-
-			.banner_table{
-				border-radius: 20px;
-				text-align: center;
-				color: white;
-				background-size: cover;
-			}
-
-			#banner h1{
-				width: 75%;
-				display: inline-block;
-				margin: 10px;
-			}
-
-
-			#body a{
-				color: #0C7C59;
-			}
 			#subjectTitle{
 				width:inherit;
-				font-size:14px;
-				color : #984447;
 				text-align:center;
 			}
 			#subject{
-				text-align:left;
+				text-align:center;
 			}
 
 			#tag, #xlistedtag, #updated{
@@ -77,36 +36,6 @@
 				background-color: #575757;
 			}
 
-
-			.container {
-			  position: relative;
-			  text-align: center;
-			  color: yellow;
-			}
-
-			.container h1{
-			   z-index: 2;
-			   position: absolute;
-			   top: 50%;
-				left: 50%;
-				right: 50%;
-				font-size: 20px;
-				width: inherit;
-				padding: 0;
-				margin: 0;
-			}
-
-			.container img{
-				z-index: 1;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top:0;
-				right:0;
-				bottom:0;
-				left:0;
-			}
-
 			
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 
@@ -118,7 +47,7 @@ body{
   font-size: 16px;
   color:#777;
 }
-h1,h4{
+h1,h2,h4{
   font-family: 'Montserrat', sans-serif;
 }
 .row{
@@ -126,10 +55,11 @@ h1,h4{
 }
 .separator{
   margin-bottom: 30px;
-  width:35px;
+  width:100%;
   height:3px;
   background:#777;
   border:none;
+  
 }
 .title{
   text-align: center;
@@ -160,7 +90,7 @@ h1,h4{
   user-select: none;
   
   .item-in {
-    background: #fff;
+    background: #e8e8e8;
     padding: 40px;
     position: relative;
     
@@ -172,12 +102,12 @@ h1,h4{
     content: "";
     position: absolute;
     bottom: 0px;
-    height: 2px;
+    height: 3px;
     width: 0%;
-    background: #333333;
-    right: 0px;
-    -webkit-transition: width 0.4s;
-    transition: width 0.4s;
+    background: #008539;
+    left: 0px;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
     }
   }
 }
@@ -194,7 +124,7 @@ h1,h4{
     }
     a{
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+	  font-size: inherit;
       text-transform: uppercase;
       color: #666666;
       margin-top: 10px;
@@ -268,159 +198,118 @@ MathJax = {
 	</head>
 	<body>
 		<div id="body">
-		<div id="subjectTitle">	<h2 id="subjectTitleText">Number Theory [math.NT]</h2>
+		<div id="subjectTitle">	<h1 id="subjectTitleText">Number Theory [math.NT]</h1>
 	</div>
 	<div id="subject">
 
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.06812">On the Fontaine-Mazur conjecture for $p=3$</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Xinyao Zhang</div><br>
-		In this article, we prove some new cases of the Fontaine-Mazur conjecture on two-dimensional Galois representations when $p=3$. Combining the previous work, we can conclude the conjecture in the regular case when $p$ is an odd prime. Our result is a sequel to Pan's work, based on some recent progress on $p$-adic Langlands correspondence and Galois deformation theory.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07884">Normal points on Artin-Schreier curves over finite fields</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Giorgos Kapetanakis, Lucas Reis</div><br>
+		In 2022, S.D. Cohen and the two authors introduced and studied the concept of $(r, n)$-freeness on finite cyclic groups $G$ for suitable integers $r, n$, which is an arithmetic way of capturing elements of special forms that lie in the subgroups of $G$. Combining this machinery with some character sum techniques, they explored the existence of points $(x_0, y_0)$ on affine curves $y^n=f(x)$ defined over a finite field $\mathbb F$ whose coordinates are generators of the multiplicative cyclic group $\mathbb F^*$. In this paper we develop the natural additive counterpart of this work for finite fields. Namely, any finite extension $\mathbb E$ of a finite field $\mathbb F$ with $Q$ elements is a cyclic $\mathbb F[x]$-module induced by the Frobenius automorphism $\alpha\mapsto \alpha^{Q}$, and any generator of this module is said to be a normal element over $\mathbb F$. We introduce and study the concept of $(f, g)$-freeness on this module structure for suitable polynomials $f, g\in \mathbb F[x]$. As a main application of the machinery developed in this paper, we study the existence of $\mathbb F_{p^n}$-rational points in the Artin-Schreier curve $\mathfrak A_f : y^p-y=f(x)$ whose coordinates are normal over the prime field $\mathbb F_p$ and establish concrete results.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07054">Transcendence of ${}_3F_2(1)$ Hypergeometric Series and $L$-values of Modular Forms</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Esme Rosen</div><br>
-		We examine the families of hypergeometric series associated to a special class of modular hypergeometric Galois representations recently studied by Allen, Grove, Long, and Tu. The underlying motives allow us to express a special $L$-value of the corresponding modular form in terms of these hypergeometric series. We use extra symmetries coming from the underlying modular forms to study the transcendence of families of periods, which have the form ${}_3F_2(1)$, on hypergeometric surfaces. For several hypergeometric surfaces with four periods, we show that the vector space generated by these elements has dimension at most 2. As an application of our results, we utilize a classical formula of ${}_3F_2(1)$ series due to Kummer to find relations between $L$-values of modular forms that differ by an even twist, as predicted in a theorem of Shimura.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07908">Transcendence of Hecke-Mahler Series</a> <div id="tag">math.NT</div><div id="xlistedtag">cs.FL</div></h4><div class="separator"></div>
+<br>	<div id="authors">Florian Luca, Joel Ouaknine, James Worrell</div><br>
+		We prove transcendence of the Hecke-Mahler series $\sum_{n=0}^\infty f(\lfloor n\theta+\alpha \rfloor) \beta^{-n}$, where $f(x) \in \mathbb{Z}[x]$ is a non-constant polynomial $\alpha$ is a real number, $\theta$ is an irrational real number, and $\beta$ is an algebraic number such that $|\beta|>1$.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07308">Iwasawa theory and ranks of elliptic curves in quadratic twist families</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Jeffrey Hatley, Anwesh Ray</div><br>
-		We study the distribution of ranks of elliptic curves in quadratic twist families using Iwasawa-theoretic methods, contributing to the understanding of Goldfeld's conjecture. Given an elliptic curve $ E/\mathbb{Q} $ with good ordinary reduction at $ 2 $ and $ \lambda_2(E/\mathbb{Q}) = 0 $, we use Matsuno's Kida-type formula to construct quadratic twists $ E^{(d)} $ such that $ \lambda_2(E^{(d)}/\mathbb{Q}) $ remains unchanged or increases by $ 2 $. When the root number of $E^{(d)}$ is $-1$ and the Tate-Shafarevich group $Sha(E^{(d)}/\mathbb{Q})[2^\infty] $ is finite, this yields quadratic twists with Mordell--Weil rank $ 1 $. These results support the conjectural expectation that, on average, half of the quadratic twists in a family have rank $ 0 $ and half have rank $ 1 $. In the cases we consider we obtain asymptotic lower bounds for the number of twists by squarefree numbers $d\leq X$ which match with the conjectured value up to an explicit power of $\log X$.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07989">Exponential Sums with Sparse Polynomials and Distribution of the Power Generator</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Subham Bhakta, Igor Shparlinski</div><br>
+		We obtain new bounds on complete rational exponential sums with sparse polynomials modulo a prime, under some mild conditions on the degrees of the monomials of such polynomials. These bounds, when they apply, give explicit versions of a result of J. Bourgain (2005). We then use one of these bounds to study the multidimensional distribution of the classical power generator of pseudorandom numbers, which has not been possible within previously known results.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07701">$\ell$-Torsion in Class Groups via Dirichlet $L$-functions</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">D. R. Heath-Brown</div><br>
-		For a prime $\ell$, let $h_\ell(K)$ denote the $\ell$-part of the class number of the number field $K$. We investigate upper bounds for $h_\ell(K)$ when $K$ is quadratic or cubic, particularly in the case in which the discriminant of $K$ is smooth. This is achieved using properties of Dirichlet $L$-functions.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08214">Initial layer of the anti-cyclotomic $\mathbb{Z}_3$-extension of $\mathbb{Q}(\sqrt{-m})$ and capitulation phenomenon</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Georges Gras (LMB)</div><br>
+		Let $k=\mathbb{Q}(\sqrt-m)$ be an imaginary quadratic field. We consider the properties of capitulation of the p-class group of k in the anti-cyclotomic $\mathbb{Z}_p$-extension of $k$, for $p=3$; for this, using a new algorithm, we determine the first layer $k^{\rm ac}_1$ of $k^{\rm ac}$ over $k$ (with absolutely general pari/gp programs that may be used by the reader), and we examine if, at least, some partial capitulation may exist in $k^{\rm ac}_1$. The answer seems obviously yes,even when $k^{\rm ac}/k$ is totally ramified. We have conjectured that this phenomenon of capitulation is specific of all the $\mathbb{Z}_p$-extensions of $k$, distinct from the cyclotomic one, whatever $p$. We characterize a family of fields k (called Normal Split cases) for which $k^{\rm ac}$ is not linearly disjoint from the Hilbert class field (Theorem 1.16). Many numerical illustrations are given for p=3 with computation of the 3-class group of $k^{\rm ac}_1$. No assumptions are made on the structure of the 3-class group of $k$, nor on the splitting of 3 in $k$ and in its mirror field $k^*=\mathbb{Q}(\sqrt3m)$.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.06824">Whittaker normalization of $p$-adic ABV-packets and Vogan's conjecture for tempered representations</a> <div id="tag">math.RT</div><div id="xlistedtag">math.AG</div><div id="xlistedtag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Clifton Cunningham, Sarah Dijols, Andrew Fiori, Qing Zhang</div><br>
-		We show that ABV-packets for $p$-adic groups do not depend on the choice of a Whittaker datum, but the function from the ABV-packet to representations of the appropriate microlocal equivariant fundamental group does, and we find this dependence exactly. We study the relation between open parameters and tempered parameters and Arthur parameters and generic representations. We state a genericity conjecture for ABV-packets and prove this conjecture for quasi-split classical groups and their pure inner forms. Motivated by this we study ABV-packets for open parameters and prove that they are L-packets, and further that the function from the packet to the fundamental group given by normalized vanishing cycles coincides with the one given by the Langlands correspondence. From this conclude Vogan's conjecture on A-packets for tempered representations: ABV-packets for tempered parameters are Arthur packets and the function from the packet to the fundamental group given by normalized vanishing cycles coincides with the one given by Arthur.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08437">Zeta and L functions of Voevodsky motives</a> <div id="tag">math.NT</div><div id="xlistedtag">math.AG</div></h4><div class="separator"></div>
+<br>	<div id="authors">Bruno Kahn</div><br>
+		We associate an $L$-function $L^{\mathrm{near}}(M,s)$ to any geometric motive over a global field $K$ in the sense of Voevodsky. This is a Dirichlet series which converges in some half-plane and has an Euler product factorisation. When $M$ is the dual of $M(X)$ for $X$ a smooth projective variety, $L^{\mathrm{near}}(M,s)$ differs from the alternating product of the zeta functions defined by Serre in 1969 only at places of bad reduction; in exchange, it is multiplicative with respect to exact triangles. If $K$ is a function field over $\mathbf{F}_q$, $L{\mathrm{near}}(M,s)$ is a rational function in $q^{-s}$ and enjoys a functional equation. The techniques use the full force of Ayoub's six (and even seven) operations.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07055">Pointwise ergodic theorems along fractional powers of primes</a> <div id="tag">math.DS</div><div id="xlistedtag">math.CA</div><div id="xlistedtag">math.NT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Erik Bahnson, Leonidas Daskalakis, Abbas Dohadwala, Ish Shah</div><br>
-		We establish pointwise convergence for nonconventional ergodic averages taken along $\lfloor p^c\rfloor$, where $p$ is a prime number and $c\in(1,4/3)$ on $L^r$, $r\in(1,\infty)$. In fact, we consider averages along more general sequences $\lfloor h(p)\rfloor$, where $h$ belongs in a wide class of functions, the so-called $c$-regularly varying functions. We also establish uniform multiparameter oscillation estimates for our ergodic averages and the corresponding multiparameter pointwise ergodic theorem in the spirit of Dunford and Zygmund. A key ingredient of our approach are certain exponential sum estimates, which we also use for establishing a Waring-type result. Assuming that the Riemann zeta function has any zero-free strip upgrades our exponential sum estimates to polynomially saving ones and this makes a conditional result regarding the behavior of our ergodic averages on $L^1$ to not seem entirely out of reach.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08455">Existence of Special Types Primitive Pairs in Finite Fields Avoiding Affine Hyperplanes</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Himangshu Hazarika, Giorgos Kapetanakis, Dhiren Kumar Basnet</div><br>
+		Let $\Fm$ be finite fields of order $q^m$, where $m\geq 2$ and $q$, a prime power. Given $\F$-affine hyperplanes $A_1,\ldots, A_m$ of $\Fm$ in general position, we study the existence of primitive element $\alpha$ of $\Fm$, such that $f(\alpha)$ is also primitive, where $ax^2+bx+c\in \Fm[x]$ ($a\neq 0$ and $b^2\neq 4ac$) in $\Fm$ and the primitive pair $(\alpha, f(\alpha))$ avoids each $A_i$. We establish results for fields of higher order.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.07501">Theta correspondence via group C*-algebras</a> <div id="tag">math.OA</div><div id="xlistedtag">math.NT</div><div id="xlistedtag">math.RT</div></h4><div class="separator"></div>
-<br>	<div id="authors">Magnus Goffeng, Bram Mesland, Mehmet Haluk Sengun</div><br>
-		We prove that the well-known explicit construction of the local theta correspondence by Li has a simple interpretation in terms of group C*-algebras. In particular, we deduce that in two standard cases where Li's method work, local theta correspondence arises from a continuous functor. Moreover, using results from a companion paper, we treat global theta correspondence using C*-algebraic methods. As a byproduct, we exhibit that Rallis inner product formula can be interpreted as a certain natural inclusion being an isometry.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08600">Chebotarev's theorem for roots of unity of square free order</a> <div id="tag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Maria Loukaki</div><br>
+		Let $p$ be a prime number and $\zeta_p$ a primitive $p$-th root of unity. Chebotarev's theorem states that every square submatrix of the $p \times p$ matrix $(\zeta_p^{ij})_{i,j=0}^{p-1}$ is non-singular. In this paper we prove the same for principal submatrices of $(\zeta_n^{ij})_{i,j=0}^{n-1}$, when $n=pr$ is the product of two distinct primes, and $p$ is a large enough prime that has order $r-1$ in $\mathbf{Z}_r^*$.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2109.10238">Distribution of Square Prime Numbers</a> <div id="tag">math.NT</div><div id="updated">v4</div></h4><div class="separator"></div>
-<br>	<div id="authors">Raghavendra N. Bhat</div><br>
-		For $a \neq 1$ and $p$ prime, we define numbers of the form $pa^2$ to be Square-Prime (SP) Numbers. For example, 75 = 3 $\cdot$ 25; 108 = 3 $\cdot$ 36; 45 = 5 $\cdot$ 9. These numbers are listed in the OEIS as A228056. We study the properties of these numbers, their distribution/density and also develop a few claims on their distribution/density. We rely on computer programs to verify some conjectures up to large numbers.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08354">The Igusa local zeta function of certain Thom-Sebastiani type functions</a> <div id="tag">math.AG</div><div id="xlistedtag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Quy Thuong Lê, Hoang Long Nguyen</div><br>
+		In this paper, we give an explicit formula of the Igusa local zeta function of a Thom-Sebastiani type sum of two separated-variable Newton non-critical polynomials. Data for the description are available on their Newton polyhedra.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2208.07065">The Localization Method Applied to $k$-Elongated Plane Partitions and Divisibility by 5</a> <div id="tag">math.NT</div><div id="updated">v3</div></h4><div class="separator"></div>
-<br>	<div id="authors">Koustav Banerjee, Nicolas Allen Smoot</div><br>
-		The enumeration $d_k(n)$ of $k$-elongated plane partition diamonds has emerged as a generalization of the classical integer partition function $p(n)$. We have discovered an infinite congruence family for $d_5(n)$ modulo powers of 5. Classical methods cannot be used to prove this family of congruences. Indeed, the proof employs the recently developed localization method, and utilizes a striking internal algebraic structure which has not yet been seen in the proof of any congruence family. We believe that this discovery poses important implications on future work in partition congruences.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2412.08399">3 dimensional Wythoff Nim</a> <div id="tag">math.CO</div><div id="xlistedtag">math.DS</div><div id="xlistedtag">math.NT</div></h4><div class="separator"></div>
+<br>	<div id="authors">Shigeki Akiyama</div><br>
+		We introduce a new generalization of Wythoff Nim using three piles of stones. We show that its P-positions have finite difference properties and produce a partition of positive integers. Further, we give a conjecture that the P-positions approximate a semi-line whose slope is described by algebraic numbers of degree 5.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2210.04622">Sequences, Series and Uniform distribution of SP Numbers</a> <div id="tag">math.NT</div><div id="updated">v4</div></h4><div class="separator"></div>
-<br>	<div id="authors">Raghavendra N. Bhat</div><br>
-		We defined numbers of the form $p\cdot a^2$ as SP numbers (Square-Prime numbers) ($a\neq1$, $p$ prime) in 'Distribution of Square-Prime Numbers' (arXiv:2109.10238). These numbers are listed in the OEIS as A228056. Some examples of SP numbers: $75=3 \cdot 25; 108=3 \cdot 36; 45= 5 \cdot 9$. This paper explores sequences of these numbers, sequences between 0 and 1 related to these numbers and analyzes the distribution of some of these sequences.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/1611.01329">On the ranks of elliptic curves with isogenies</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">Harris B. Daniels, Hannah Goodwillie</div><br>
+		In recent years, the question of whether the ranks of elliptic curves defined over $\mathbb{Q}$ are unbounded has garnered much attention. One can create refined versions of this question by restricting one's attention to elliptic curves over $\mathbb{Q}$ with a certain algebraic structure, e.g., with a rational point of a given order. In an attempt to gather data about such questions, we look for examples of elliptic curves over $\mathbb{Q}$ with an $n$-isogeny and rank as large as possible. To do this, we use existing techniques due to Rogers, Rubin, Silverberg, and Nagao and develop a new technique (based on an observation made by Mazur) that is more computationally feasible when the naive heights of the elliptic curves are large.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2211.09009">Algebraic Results on SP Numbers along with a generalization</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Raghavendra N. Bhat, Sundarraman Madhusudanan</div><br>
-		We defined numbers of the form $p\cdot a^2$ as SP numbers (Square-Prime numbers) ($a\neq1$, $p$ prime) in the paper 'Distribution of Square-Prime numbers' (arXiv:2109.10238) along with proofs on their distribution. Some examples of SP Numbers : 75 = 3 $\cdot$ 25; 108 = 3 $\cdot$ 36; 45 = 5 $\cdot$ 9. These numbers are listed in the OEIS as A228056. In this paper, we will prove a few algebraic theorems and generalize the definition of SP Numbers to allow factors of arbitrary natural number powers.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2005.12115">Must a primitive non-deficient number have a component not much larger than its radical?</a> <div id="tag">math.NT</div><div id="updated">v3</div></h4><div class="separator"></div>
+<br>	<div id="authors">Joshua Zelinsky</div><br>
+		Let $n$ be a primitive non-deficient number where $n=p_1^{a_1}p_2^{a_2} \cdots p_k^{a_k}$ where $p_1, p_2 \cdots p_k$ are distinct primes. We prove that there exists an $i$ such that $$p_i^{a_i+1} < 2k(p_1p_2p_3\cdots p_k).$$ We conjecture that in fact one can always find an $i$ such that ${p_i}^{a_i+1} < p_1p_2p_3\cdots p_k$.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2309.03922">Filtered rays over iterated absolute differences on layers of integers</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Raghavendra N. Bhat, Cristian Cobeli, Alexandru Zaharescu</div><br>
-		The dynamical system generated by the iterated calculation of the high order gaps between neighboring terms of a sequence of natural numbers is remarkable and only incidentally characterized at the boundary by the notable Proth-Glibreath Conjecture for prime numbers.
-  We introduce a natural extension of the original triangular arrangement, obtaining a growing hexagonal covering of the plane. This is just the base level of what further becomes an endless discrete helicoidal surface. % Although the repeated calculation of higher-order gaps causes the numbers that generate the helicoidal surface to decrease, there is no guarantee, and most often it does not even happen, that the levels of the helicoid have any regularity, at least at the bottom levels.
-  However, we prove that there exists a large and nontrivial class of sequences with the property that their helicoids have all levels coinciding with their base levels. This class includes in particular many ultimately binary sequences with a special header. % For almost all of these sequences, we additionally show that although the patterns generated by them seem to fall somewhere between ordered and disordered, exhibiting fractal-like and random qualities at the same time, the distribution of zero and non-zero numbers at the base level has uniformity characteristics. Thus, we prove that a multitude of straight lines that traverse the patterns encounter zero and non-zero numbers in almost equal proportions.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2304.03121">Furstenberg systems of pretentious and MRT multiplicative functions</a> <div id="tag">math.NT</div><div id="xlistedtag">math.DS</div><div id="updated">v4</div></h4><div class="separator"></div>
+<br>	<div id="authors">Nikos Frantzikinakis, Mariusz Lemańczyk, Thierry de la Rue</div><br>
+		We prove structural results for measure preserving systems, called Furstenberg systems, naturally associated with bounded multiplicative functions. We show that for all pretentious multiplicative functions these systems always have rational discrete spectrum and, as a consequence, zero entropy. We obtain several other refined structural and spectral results, one consequence of which is that the Archimedean characters are the only pretentious multiplicative functions that have Furstenberg systems with trivial rational spectrum, another is that a pretentious multiplicative function has ergodic Furstenberg systems if and only if it pretends to be a Dirichlet character, and a last one is that for any fixed pretentious multiplicative function all its Furstenberg systems are isomorphic. We also study structural properties of Furstenberg systems of a class of multiplicative functions, introduced by Matom\"aki, Radziwill, and Tao, which lie in the intermediate zone between pretentiousness and strong aperiodicity. In a work of the last two authors and Gomilko, several examples of this class with exotic ergodic behavior were identified, and here we complement this study and discover some new unexpected phenomena. Lastly, we prove that Furstenberg systems of general bounded multiplicative functions have divisible spectrum. When these systems are obtained using logarithmic averages, we show that trivial rational spectrum implies a strong dilation invariance property, called strong stationarity, but, quite surprisingly, this property fails when the systems are obtained using Ces\`aro averages.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2312.11661">Weighted Versions of the Arithmetic-Mean-Geometric Mean Inequality and Zaremba's Function</a> <div id="tag">math.NT</div><div id="updated">v3</div></h4><div class="separator"></div>
-<br>	<div id="authors">Tim McCormack, Joshua Zelinsky</div><br>
-		We use the weighted version of the arithmetic-mean-geometric-mean inequality to motivate new results about Zaremba's function, $z(n) = \sum_{d|n} \frac{\log d}{d}$. We investigate record-setting values for $z(n)$ and the related function $v(n) = \frac{z(n)}{\log \tau(n)}$ where $\tau(n)$ is the number of divisors of $n$. We show that $v(n)$ takes on a maximum value and we give a list of all record-setting values for$v(n)$. Closely connected inequalities motivate the study of numbers which are pseudoperfect in a strong sense.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2402.14234">The sum of the reciprocals of the prime divisors of an odd perfect or odd primitive non-deficient number</a> <div id="tag">math.NT</div><div id="updated">v4</div></h4><div class="separator"></div>
+<br>	<div id="authors">Joshua Zelinsky</div><br>
+		Write $T(n)$ as the sum of the reciprocals of the primes which divide $n$. Write $H(n) = \prod_{p|n}p/(p-1)$ where the product is over the prime divisors of $n$. We prove new bounds for $T(n)$ and $H(n)$ in terms of the smallest prime factor of $n$, under the assumption that $n$ is an odd perfect number. Some of the results also apply under the weaker assumption that $n$ is odd and primitive non-deficient.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2403.02030">Rational distances from given rational points in the plane</a> <div id="tag">math.NT</div><div id="xlistedtag">math.AG</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Pietro Corvaja, Amos Turchet, Umberto Zannier</div><br>
-		In this paper we study sets of points in the plane with rational distances from r prescribed points P_1, ...,P_r. A crucial case arises for r = 3, where we provide simple necessary and sufficient conditions for the density of this set in the real topology. We show in the Main Theorem that these conditions can be checked effectively (via congruences), proving that a related class of K3 surfaces satisfies the local-global principle. In particular, these conditions are always satisfied when P_1, P_2, P_3 are rational. This result completes and goes beyond the analysis of Berry, who worked under stronger assumptions, not always fulfilled for instance in all the cases where P_1, P_2, P_3 are rational. On the other hand, for r\ge 4, we show that points with rational distances correspond to rational points in a surface of general type, hence conjecturally not Zariski dense. However, at the present, we lack methods to prove this, given the fact that the surface is simply-connected, as we shall show. We give explicit proofs as well as describe in detail the geometry of the surfaces involved. In addition we discuss certain analogues for points with distances in certain ring of integers.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2402.16425">The Bombieri-Vinogradov theorem for primes of the form $\mathbf{p=x^2+y^2+1}$</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">S. I. Dimitrov</div><br>
+		In this paper, we establish a Bombieri-Vinogradov type result for prime numbers of the form $p=x^2+y^2+1$. The proof is based on the enveloping sieve.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2406.05524">Galois representations over function fields that are ramified at one prime</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Anwesh Ray</div><br>
-		Let $\mathbb{F}_q$ be the finite field with $q$ elements, $F:=\mathbb{F}_q(T)$ and $F^{\operatorname{sep}}$ a separable closure of $F$. Set $A$ to denote the polynomial ring $\mathbb{F}_q[T]$. Let $\mathfrak{p}$ be a non-zero prime ideal of $A$, and $\mathscr{O}$ be the completion of $A$ at $\mathfrak{p}$. Given any integer $r\geq 2$, I construct a Galois representation $\rho:\operatorname{Gal}(F^{\operatorname{sep}}/F)\rightarrow \operatorname{GL}_r(\mathscr{O})$ which is unramified at all non-zero primes $\mathfrak{l}\neq \mathfrak{p}$ of $A$, and whose image is a finite index subgroup of $\operatorname{GL}_r(\mathscr{O})$. Moreover, if the degree of $\mathfrak{p}$ is $1$, then $\rho$ is also unramified at $\infty$.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2403.01498">On the anticyclotomic Mazur-Tate conjecture for elliptic curves with supersingular reduction</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">Chan-Ho Kim</div><br>
+		In this short note, we study the anticyclotomic analogue of the "weak" main conjecture of Mazur-Tate on Fitting ideals of Selmer groups for elliptic curves with supersingular reduction.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2406.10820">Approximation measures for shifted logarithms of algebraic numbers via effective Poincare-Perron</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Noriko Hirata-Kohno, Ryuji Muroi, Yusuke Washio</div><br>
-		In this article, we show new effective approximation measures for the shifted logarithm of algebraic numbers which belong to a number field of arbitrary degree. Our measures refine previous ones including those for usual logarithms. We adapt Pade approximants constructed by M. Kawashima and A. Poels in the rational case. Our key ingredient relies on the Poincare-Perron theorem which gives us asymptotic estimates at every archimedean place of the number field, that we apply to decide whether the shifted logarithm lies outside of the number field. We use Perron's second theorem and its modification due to M. Pituk to handle general cases.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2409.17105">On weighted singular vectors for multiple weights</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">Shreyasi Datta, Nattalie Tamam</div><br>
+		We introduce the notion of weighted singular vectors and weighted uniform exponent with respect to a set of weights. We prove invariance of these exponents for affine subspaces and submanifolds inside those affine subspaces. For certain analytic submanifolds, we show that there are totally irrational vectors with high weighted uniform exponent, extending the previously known existence results. Moreover, we show existence and non-existence of non-obvious divergence orbits for certain cones.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2406.18689">A finiteness condition for complex continued fraction algorithms</a> <div id="tag">math.NT</div><div id="xlistedtag">math.DS</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Charlene Kalle, Fanni M. Sélley, Jörg M. Thuswaldner</div><br>
-		It is desirable that a given continued fraction algorithm is simple in the sense that the possible representations can be characterized in an easy way. In this context the so-called finite range condition plays a prominent role. We show that this condition holds for complex $\boldsymbol{\alpha}$-Hurwitz algorithms with parameters $\boldsymbol{\alpha}\in\mathbb{Q}^2$. This is equivalent to the existence of certain finite partitions related to these algorithms and lies at the root of explorations into their Diophantine properties. Our result provides a partial answer to a recent question formulated by Lukyanenko and Vandehey.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.16041">Witt Group of Nondyadic Curves</a> <div id="tag">math.AG</div><div id="xlistedtag">math.KT</div><div id="xlistedtag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">Nanjun Yang</div><br>
+		We compute the Witt group of smooth proper curves over nondyadic local fields with $char\neq2$ by reduction.<br>
+</div></div>
 		<div class="col-md-6 item" id="paper">
 			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.06763">The Shintani--Faddeev modular cocycle: Stark units from $q$-Pochhammer ratios</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Gene S. Kopp</div><br>
-		We give a new interpretation of Stark units associated to real quadratic fields as real multiplication values of a modular cocycle. The cocycle of interest is a meromorphic factor describing the modular transformations of the $q$-Pochhammer symbol and is related to the Shintani--Barnes double sine function and the Faddeev quantum dilogarithm. We prove a refinement of Shintani's Kronecker limit formula that relates square roots of Stark class invariants to real multiplication values of the cocycle, which are cohomological invariants.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.12684">Relative Lonely Runner spectra</a> <div id="tag">math.NT</div><div id="xlistedtag">math.CO</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Vanshika Jain, Noah Kravitz</div><br>
-		For a subtorus $T \subseteq (\mathbb{R}/\mathbb{Z})^n$, let $D(T)$ denote the $L^\infty$-distance from $T$ to the point $(1/2, \ldots, 1/2)$. For a subtorus $U \subseteq (\mathbb{R}/\mathbb{Z})^n$, define $\mathcal{S}_1(U)$, the Lonely Runner spectrum relative to $U$, to be the set of all values of $D(T)$ as $T$ ranges over the $1$-dimensional subtori of $U$ not contained in the union of the coordinate hyperplanes of $(\mathbb{R}/\mathbb{Z})^n$. The relative spectrum $\mathcal{S}_1((\mathbb{R}/\mathbb{Z})^n)$ is the ordinary Lonely Runner spectrum that has been studied previously.
-  Giri and the second author recently showed that the relative spectra $\mathcal{S}_1(U)$ for $2$-dimensional subtori $U \subseteq (\mathbb{R}/\mathbb{Z})^n$ essentially govern the accumulation points of the Lonely Runner spectrum $\mathcal{S}_1((\mathbb{R}/\mathbb{Z})^n)$. In the present work, we prove that such relative spectra $\mathcal{S}_1(U)$ have a very rigid arithmetic structure, and that one can explicitly find a complete characterization of each such relative spectrum with a finite calculation; carrying out this calculation for a few specific examples sheds light on previous constructions in the literature on the Lonely Runner Problem.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.17823">Triple sums of Kloosterman sums and the discrepancy of modular inverses</a> <div id="tag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Valentin Blomer, Morten S. Risager, Igor E. Shparlinski</div><br>
-		We investigate the distribution of modular inverses modulo positive integers $c$ in a large interval. We provide upper and lower bounds for their box, ball and isotropic discrepancy, thereby exhibiting some deviations from random point sets. The analysis is based, among other things, on a new bound for a triple sum of Kloosterman sums.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2111.13286">Construction of simple quotients of Bernstein-Zelevinsky derivatives and highest derivative multisegments I: reduction to combinatorics</a> <div id="tag">math.RT</div><div id="xlistedtag">math.NT</div><div id="updated">v5</div></h4><div class="separator"></div>
-<br>	<div id="authors">Kei Yuen Chan</div><br>
-		Let $F$ be a local non-Archimedean field. A sequence of derivatives of generalized Steinberg representations can be used to construct simple quotients of Bernstein-Zelevinsky derivatives of irreducible representations of $\mathrm{GL}_n(F)$. In the first of a series of articles, we introduce a notion of a highest derivative multisegment, which in turn gives a combinatorial approach to study problems about those simple quotients. We also prove a double derivative result along the way.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2406.13546">Dual of the Geometric Lemma and the Second Adjointness Theorem for $p$-adic reductive groups</a> <div id="tag">math.RT</div><div id="xlistedtag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Kei Yuen Chan</div><br>
-		Let $P,Q$ be standard parabolic subgroups of a $p$-adic reductive group $G$. We study the smooth dual of the filtration on a parabolically induced module arising from the geometric lemma associated to the cosets $P\setminus G/Q$. We prove that the dual filtration coincides with the filtration associated to the cosets $P\setminus G/Q^-$ via the Bernstein-Casselman canonical pairing from the second adjointness of parabolic induction. This result generalizes a result of Bezrukavnikov-Kazhdan on the explicit description in the second adjointness. Along the way, we also study some group theoretic results.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2408.01270">On the Burde--de Rham theorem for finitely presented pro-$p$ groups</a> <div id="tag">math.GT</div><div id="xlistedtag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Yasushi Mizusawa, Ryoto Tange, Yuji Terashima</div><br>
-		We consider the Burde--de Rham theorem for finitely presented pro-$p$ groups under the assumption that the total degrees of all relators are $0$. We also give some concrete examples including higher-dimensional cases under Iwasawa theoretic conditions, and consider some cohomological interpretations.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>
-		<div class="col-md-6 item" id="paper">
-			<div class="item-in">
-<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.09478">The multilinear circle method and a question of Bergelson</a> <div id="tag">math.DS</div><div id="xlistedtag">math.CA</div><div id="xlistedtag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
-<br>	<div id="authors">Dariusz Kosz, Mariusz Mirek, Sarah Peluse, James Wright</div><br>
-		Let $k\in \mathbb Z_+$ and $(X, \mathcal B(X), \mu)$ be a probability space equipped with a family of commuting invertible measure-preserving transformations $T_1,\ldots, T_k \colon X\to X$. Let $P_1,\ldots, P_k\in\mathbb Z[\rm n]$ be polynomials with integer coefficients and distinct degrees. We establish pointwise almost everywhere convergence of the multilinear polynomial ergodic averages \[A_{N; X, T_1,\ldots, T_k}^{P_1,\ldots, P_k}(f_1,\ldots, f_k)(x) = \frac{1}{N}\sum_{n=1}^Nf_1\big(T_1^{P_1(n)}x\big)\cdots f_k\big(T_k^{P_k(n)}x\big), \qquad x\in X, \]
-  as $N\to\infty$ for any functions $f_1, \ldots, f_k\in L^{\infty}(X)$. Besides a couple of results in the bilinear setting (when $k=2$ and then only for single transformations), this is the first pointwise result for general polynomial multilinear ergodic averages in arbitrary measure-preserving systems. This answers a question of Bergelson from 1996 in the affirmative for any polynomials with distinct degrees, and makes progress on the Furstenberg-Bergelson-Leibman conjecture.
-  In this paper, we build a versatile multilinear circle method by developing the Ionescu-Wainger multiplier theorem for the set of canonical fractions, which gives a positive answer to a question of Ionescu and Wainger from 2005. We also establish sharp multilinear $L^p$-improving bounds and an inverse theorem in higher order Fourier analysis for averages over polynomial corner configurations, which we use to establish a multilinear analogue of Weyl's inequality and its real counterpart, a Sobolev smoothing inequality.</div>
-<hr><a href="#">Read More <i class="fa fa-long-arrow-right"></i></a></div></div>	</div>
+<h4><a id="paperTitle" href="https://arxiv.org/abs/2411.17523">Partition regularity of homogeneous quadratics: Current trends and challenges</a> <div id="tag">math.CO</div><div id="xlistedtag">math.NT</div><div id="updated">v2</div></h4><div class="separator"></div>
+<br>	<div id="authors">Nikos Frantzikinakis</div><br>
+		Suppose we partition the integers into finitely many cells. Can we always find a solution of the equation $x^2+y^2=z^2$ with $x,y,z$ on the same cell? What about more general homogeneous quadratic equations in three variables? These are basic questions in arithmetic Ramsey theory, which have recently been partially answered using ideas inspired by ergodic theory and tools such as Gowers-uniformity properties and concentration estimates of bounded multiplicative functions. The aim of this article is to provide an introduction to this exciting research area, explaining the main ideas behind the recent progress and some of the important challenges that lie ahead.<br>
+</div></div>	</div>
 		</div>
 	</body>
 	</html>
