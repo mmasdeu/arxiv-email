@@ -1,3 +1,5 @@
 feedparser
 datetime
 python-dotenv
+unicodeitplus
+pylatexenc

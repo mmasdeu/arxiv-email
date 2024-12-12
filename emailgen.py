@@ -8,6 +8,7 @@ import csv
 import feedparser
 from datetime import date
 import LaTexAccents as TeX
+from pylatexenc.latex2text import LatexNodes2Text
 # import subprocess
 # import base64
 today = date.today()
@@ -288,7 +289,7 @@ MathJax = {
 				else:
 					newtag = '<div id="xlistedtag">' + str(tag) + '</div>'
 				
-				tags_html = tags_html + newtag
+				tags_html += newtag
 
 
 			# Strip the entry.id at 'v' to get the version number
@@ -297,7 +298,7 @@ MathJax = {
 
 			version_html = ''
 			if int(version_number) != 1:
-				version_html = version_html + '<div id="updated">v' + str(version_number) + '</div>'
+				version_html += '<div id="updated">v' + str(version_number) + '</div>'
 
 
 
@@ -316,37 +317,38 @@ MathJax = {
 			entry_html = '\n\t\t<div class="col-md-6 item" id="paper">\n\t\t\t<div class="item-in">\n'
 
 			# Add the link to the title
-			entry_html = entry_html + '<h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
+			entry_html += '<h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
 			
 
 			
 			# Add tags and version info
-			entry_html = entry_html + tags_html + version_html
+			entry_html += tags_html + version_html
 
-			entry_html = entry_html + '</h4>'
+			entry_html += '</h4>'
 
-			entry_html = entry_html + '<div class="separator"></div>\n'
+			entry_html += '<div class="separator"></div>\n'
 
 			# Add authors
-			entry_html = entry_html + '<br>\t<div id="authors">' + author_str + '</div>'
+			entry_html += '<br>\t<div id="authors">' + author_str + '</div>'
 
 			# Add summary
 			abstract = str(entry.summary).split('Abstract: ')[1]
 
-			# Convert abstract via pandoc
+			# Convert abstract via pylatexenc
+			# abstract = LatexNodes2Text().latex_to_text(abstract)
 			# abstract = latex_to_unicode(abstract)
 
-			entry_html = entry_html	+ '<br>\n\t\t' + abstract + '<br>\n'
+			entry_html += '<br>\n\t\t' + abstract + '<br>\n'
 
 			# entry_html = entry_html + '<a href="' + str(entry.link)+'"> Read More <i class="fa fa-long-arrow-right"></i></a>'
 
-			entry_html = entry_html + '</div></div>'
+			entry_html += '</div></div>'
 
 			# Add alternative text version of email
 			entry_text = str(entry.title) + '\n\t' + author_str + '\n\n\t\t' + str(entry.summary)
 
-			rss_html = rss_html + entry_html
-			rss_text = rss_text + entry_text
+			rss_html += entry_html
+			rss_text += entry_text
 
 
 		rss_html = rss_html + "\t</div>\n"
@@ -366,6 +368,7 @@ MathJax = {
 	# Create the body of the message (a plain-text and an HTML version).
 	text = text_top + rss_text
 	html = html_top + rss_html + html_bottom
+	mail_html = html
 
 	# print('HTML is :')
 	# print(html)
@@ -376,7 +379,7 @@ MathJax = {
 
 	# Record the MIME types of both parts,text/plain and text/html.
 	part1 = MIMEText(text, 'plain')
-	part2 = MIMEText(html, 'html')
+	part2 = MIMEText(mail_html, 'html')
 
 	# Attach parts into message container.
 	# According to RFC 2046, the last part of a multipart message, in this case
