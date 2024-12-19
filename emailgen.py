@@ -268,7 +268,8 @@ MathJax = {
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html = rss_html + """\t<div id="subjectTitle">\t<h1 id="subjectTitleText">""" + str(subj_title) + " [" + str(subj) + "]" + """</h1>\n\t</div>\n\t<div id="subject">\n"""
+		rss_html += f"""\t<div id="subjectTitle">\t<h1 id="subjectTitleText"><a href="https://arxiv.org/list/{subj}/recent">{subj_title} [{subj}]</a></h1>\n\t</div>\n"""
+		rss_html += """\t<div id="subject">\n"""
 
 		for entry in pointer:
 
@@ -314,17 +315,17 @@ MathJax = {
 			author_str = converter.decode_Tex_Accents(author_str, utf8_or_ascii=1)
 
 			# Make the html for the entry
-			entry_html = '\n\t\t<div class="col-md-6 item" id="paper">\n\t\t\t<div class="item-in">\n'
+			entry_html = '\n\t\t<article><div class="col-md-6 item" id="paper">\n\t\t\t<div class="item-in">\n'
 
 			# Add the link to the title
-			entry_html += '<h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
+			entry_html += '<header><h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
 			
 
 			
 			# Add tags and version info
 			entry_html += tags_html + version_html
 
-			entry_html += '</h4>'
+			entry_html += '</h4></header>'
 
 			entry_html += '<div class="separator"></div>\n'
 
@@ -342,7 +343,7 @@ MathJax = {
 
 			# entry_html = entry_html + '<a href="' + str(entry.link)+'"> Read More <i class="fa fa-long-arrow-right"></i></a>'
 
-			entry_html += '</div></div>'
+			entry_html += '</div></div></article>'
 
 			# Add alternative text version of email
 			entry_text = str(entry.title) + '\n\t' + author_str + '\n\n\t\t' + str(entry.summary)
