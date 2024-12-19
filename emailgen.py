@@ -140,25 +140,8 @@ h1,h2,h4{
   user-select: none;
   
   .item-in {
-    background: #e8e8e8;
     padding: 40px;
     position: relative;
-    
-    &:hover:before {
-      width: 100%;
-    }
-   
-    &::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    height: 3px;
-    width: 0%;
-    background: #008539;
-    left: 0px;
-    -webkit-transition: width 0.2s;
-    transition: width 0.2s;
-    }
   }
 }
 .item{
@@ -319,7 +302,6 @@ MathJax = {
 
 			# Add the link to the title
 			entry_html += '<header><h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
-			
 
 			
 			# Add tags and version info
