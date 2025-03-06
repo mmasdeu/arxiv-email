@@ -52,6 +52,8 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 	<html>
 	<head>
 		<style>
+		@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+		@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 			#authors {
 				text-align: center;
 				font-style: italic;	
@@ -87,9 +89,7 @@ def send_email(recipient_email,subscription_preferences,sender_email,sender_pass
 			}
 
 			
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body{
   background: #fbfbfb;
@@ -251,7 +251,7 @@ MathJax = {
 		Feed = feedparser.parse(rss_url)
 		pointer = Feed.entries
 
-		rss_html += f"""\t<div id="subjectTitle">\t<h1 id="subjectTitleText"><a href="https://arxiv.org/list/{subj}/recent">{subj_title} [{subj}]</a></h1>\n\t</div>\n"""
+		rss_html += f"""\t<div id="subjectTitle">\t<h1 id="subjectTitleText"><a href="https://arxiv.org/list/{subj}/recent" target="_blank">{subj_title} [{subj}]</a></h1>\n\t</div>\n"""
 		rss_html += """\t<div id="subject">\n"""
 
 		for entry in pointer:
@@ -301,7 +301,7 @@ MathJax = {
 			entry_html = '\n\t\t<article><div class="col-md-6 item" id="paper">\n\t\t\t<div class="item-in">\n'
 
 			# Add the link to the title
-			entry_html += '<header><h4><a id="paperTitle" href="' + str(entry.link) + '">' + papertitle + '</a> '
+			entry_html += '<header><h4><a id="paperTitle" href="' + str(entry.link) + '" target="_blank">' + papertitle + '</a> '
 
 			
 			# Add tags and version info
